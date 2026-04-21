@@ -1,6 +1,3 @@
-Here’s a **clean, professional README.md** you can directly paste into GitHub for your project:
-
----
 
 # 📍 Civic Issue Reporter
 
