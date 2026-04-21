@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Issue Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+
+</head>
+
+<body class="dashboard-body">
+
+  <!-- 🔹 Navigation Bar -->
+  <header class="navbar glass-card">
+    <div class="nav-logo">Civic Connect</div>
+    <nav class="nav-links">
+      <a href="#home" class="nav-item">Home</a>
+      <a href="#dashboard" class="nav-item">Dashboard</a>
+      <a href="#login" class="nav-item logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <!-- 🔹 HOME PAGE -->
+  <section id="home" class="home-section">
+    <div class="home-text">
+      <h1 class="fade-in">Empowering Communities, One Report at a Time</h1>
+      <p class="slide-up">
+        Civic Connect helps citizens report, track, and resolve local issues efficiently. 
+        From potholes to power cuts, make your voice heard and watch your city transform.
+      </p>
+      <button class="hero-button" onclick="document.querySelector('#dashboard').scrollIntoView({ behavior: 'smooth' });">
+        Go to Dashboard
+      </button>
+    </div>
+    <div class="background-animation"></div>
+  </section>
+
+  <!-- 🔹 DASHBOARD SECTION -->
+<main id="dashboard" class="main-content">
+
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1 id="user-greeting">Welcome!</h1>
+      <p>Report civic issues in your area and help improve your community together.</p>
+      <button class="hero-button" onclick="document.querySelector('#domain-section').scrollIntoView({ behavior: 'smooth' });">
+        Report an Issue
+      </button>
+    </div>
+  </section>
+
+  <!-- ✅ Keep all your original section IDs exactly the same -->
+  <section class="stats-cards"> ... </section>
+
+  <section class="domain-section" id="domain-section">
+    <h2>Report a New Issue</h2>
+    <div class="domain-cards">
+      <div class="domain-card" data-category="Water"><span>💦</span> Water</div>
+      <div class="domain-card" data-category="Sewage"><span>🤢</span> Sewage</div>
+      <div class="domain-card" data-category="Transport"><span>🚌</span> Transport</div>
+      <div class="domain-card" data-category="Electricity"><span>💡</span> Electricity</div>
+      <div class="domain-card" data-category="Waste"><span>🗑️</span> Waste</div>
+    </div>
+  </section>
+
+  <section class="issues-section">
+    <h2>Your Reported Issues</h2>
+    <div id="issues-list"></div>
+  </section>
+
+  <section class="map-section">
+    <h2>📍 Live Issue Map</h2>
+    <div id="issue-map"></div>
+  </section>
+
+
+  <!-- ✅ Include both modals — don't remove these -->
+  <div id="report-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h3 id="modal-title">Report New Issue</h3>
+      <form id="issue-form">
+        <input type="text" id="issue-title" placeholder="Issue Title" required>
+        <textarea id="issue-description" placeholder="Describe the issue" required></textarea>
+        <input type="text" id="issue-location" placeholder="Location" required>
+        <label for="issue-image">Upload Image (optional)</label>
+        <input type="file" id="issue-image" accept="image/*">
+        <input type="hidden" id="issue-category">
+        <button type="submit">Submit Issue</button>
+      </form>
+    </div>
+  </div>
+
+   <div id="issue-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="detail-title">Issue Title</h3>
+            <p><strong>Status:</strong> <span id="detail-status" class="status-badge"></span></p>
+            <hr>
+            
+            <h4>Issue Details</h4>
+            <p><strong>Category:</strong> <span id="detail-category"></span></p>
+            <p><strong>Location:</strong> <span id="detail-location"></span></p>
+            <p><strong>Description:</strong></p>
+            <p id="detail-description"></p>
+            <img id="detail-report-image" src="" alt="Reported Image" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+            
+            <div id="detail-resolution-section" style="display: none;">
+                <hr>
+                <h4>Resolution Details</h4>
+                <p><strong>Resolved By:</strong> <span id="detail-resolved-name"></span></p>
+                <p><strong>Contact:</strong> <span id="detail-resolved-contact"></span></p>
+                <p><strong>Proof of Resolution:</strong></p>
+                <img id="detail-resolution-image" src="" alt="Resolution Image" style="width: 100%; border-radius: 8px;">
+            </div>
+        </div>
+    </div>
+</main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Civic Connect | Built for better cities 💜</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Civic Platform</title>
+    <!-- Link to the NEW admin-specific stylesheet -->
+    <link rel="stylesheet" href="admin-style.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-table-list"></i> Issues Dashboard</a>
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-arrow-left"></i> Back to User View</a>
+                <a href="login.html" id="logout-button" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Issues Management</h1>
+                <p>Oversee and update all reported civic issues.</p>
+            </header>
+
+            <!-- Statistic Cards with Animations -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="card-icon blue"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="card-info">
+                        <p>Total Issues</p>
+                        <h3 id="stats-total">0</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon orange"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div class="card-info">
+                        <p>In Progress</p>
+                        <h3 id="stats-progress">0</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon green"><i class="fa-solid fa-check-circle"></i></div>
+                    <div class="card-info">
+                        <p>Resolved</p>
+                        <h3 id="stats-resolved">0</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Issues Table Section -->
+            <section class="table-container">
+                <div class="table-header">
+                    <h3>All Issues</h3>
+                    <div class="filters">
+                        <select id="status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="Submitted">Submitted</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                        <input type="text" id="search-input" placeholder="Search issues...">
+                    </div>
+                </div>
+                <table class="issues-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Title & Category</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-issues-tbody">
+                        <!-- Table rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+                <div id="loading-spinner" class="spinner"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Admin Modal for Viewing and Updating an Issue -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-details">
+                <!-- Details loaded here -->
+            </div>
+            <div class="modal-actions">
+                <button id="update-progress-btn" class="action-btn warning"><i class="fa-solid fa-person-digging"></i> Mark In Progress</button>
+                <button id="update-resolved-btn" class="action-btn success"><i class="fa-solid fa-circle-check"></i> Mark Resolved</button>
+            </div>
+        </div>
+    </div>
+    <div id="resolve-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Confirm Issue Resolution</h3>
+            <form id="resolve-form">
+                <p>Please provide proof of resolution.</p>
+                
+                <label for="resolve-image">Resolution Image (Required):</label>
+                <input type="file" id="resolve-image" accept="image/*" required>
+                
+                <label for="resolve-name">Resolved By (Name):</label>
+                <input type="text" id="resolve-name" placeholder="e.g., City Water Dept." required>
+                
+                <label for="resolve-contact">Contact Info (Optional):</label>
+                <input type="text" id="resolve-contact" placeholder="e.g., 555-1234">
+                
+                <button type="submit" id="confirm-resolution-btn" class="action-btn success">
+                    <i class="fa-solid fa-circle-check"></i> Confirm & Resolve
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

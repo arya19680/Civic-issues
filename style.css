@@ -1,0 +1,640 @@
+/* --- (NEW) Import Google Font 'Poppins' --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #4a69bd;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --white-color: #ffffff;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* --- (NEW) Style for login-page body --- */
+body.login-page {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Login Page Styles (MODIFIED) --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    
+    /* (NEW) Animated Gradient Background */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+.login-box {
+    /* (MODIFIED) Slightly cleaner glass effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    text-align: center;
+    width: 520px;
+    color: var(--white-color);
+    
+    /* (NEW) Fade-in animation */
+    animation: fadeInFromTop 0.8s ease-out forwards;
+}
+.login-box h2, .login-box h3 { text-shadow: 1px 1px 3px rgba(0,0,0,0.4); }
+.login-box hr { border-color: rgba(255, 255, 255, 0.3); margin: 20px 0; }
+
+/* (MODIFIED) Input field styles */
+.login-box input {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 15px; 
+    border-radius: 8px; 
+    border: none; 
+    /* (MODIFIED) Brighter background and text color */
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    transition: box-shadow 0.3s ease;
+}
+
+/* (NEW) Focus effect for inputs */
+.login-box input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.5);
+}
+
+/* (MODIFIED) Button styles */
+.login-box button {
+    width: 100%; 
+    padding: 12px; 
+    background: var(--primary-color); 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer;
+    /* (NEW) Font and transition */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* (MODIFIED) Button hover effect */
+.login-box button:hover { 
+    background: #3c5696;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- (NEW) Import Google Font 'Raleway' --- */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap");
+
+/* --- (NEW) Global Styles & Dark/Neon Theme Variables --- */
+:root {
+    --primary-color: #7c3aed; /* Neon Purple */
+    --primary-color-alt: #a855f7; /* Lighter Neon Purple */
+    
+    --white-color: #f0f0f0;
+    --text-light: #a0a0a0;
+    --dark-color: #0a0a0f; /* Near-black background */
+    --dark-color-alt: #111118; /* Dark card background */
+    --border-color: rgba(255, 255, 255, 0.1); /* Glass border */
+
+    /* Status colors */
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+a { text-decoration: none; }
+img { width: 100%; height: auto; }
+.bx { font-size: 2.5rem; }
+
+/* -- (NEW) BODY -- */
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  
+  /* (NEW) Animated Gradient Background */
+  background: linear-gradient(-45deg, #0a0a0f, #1a0a1f, #0a0a0f, #1f0a1a);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+}
+
+
+/* ================= (RE-STYLED) MAIN ================ */
+.main-content {
+    padding: 2rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* (NEW) Animation */
+    animation: contentFadeIn 1s ease-out;
+}
+
+/* --- (RE-STYLED) Hero Section (GASLUR style) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent; /* No card background */
+    padding: 40px 0; /* Padding on content */
+    border-radius: 16px;
+    margin-bottom: 40px;
+    border: none;
+}
+.hero-text h1 {
+    font-size: 3.5rem; /* (MODIFIED) Larger */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: var(--white-color); /* (MODIFIED) Solid white */
+}
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+.hero-button {
+    font-family: 'Raleway', sans-serif;
+    /* (NEW) Gradient button */
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color-alt));
+    color: var(--white-color);
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* (NEW) Neon Glow */
+    box-shadow: 0 0 15px var(--primary-color-alt);
+}
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--primary-color-alt);
+}
+.hero-image { display: none; }
+@media (min-width: 1024px) {
+    .hero-image { display: block; }
+}
+
+
+/* --- (NEW) Glassmorphism Card Style --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  padding: 24px;
+}
+.glass-card:hover {
+  transform: translateY(-5px);
+  /* (NEW) Neon glow on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-color-alt);
+  border-color: var(--primary-color-alt);
+}
+
+
+/* (RE-STYLED) Dashboard Cards (now glass) */
+.stats-cards { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 24px; 
+}
+
+/* Apply glass style to stat cards */
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-color-alt);
+    border-color: var(--primary-color-alt);
+}
+
+.stat-icon {
+    font-size: 1.5rem; padding: 16px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.stat-icon.total { background: #e0e7ff; color: #4338ca; }
+.stat-icon.in-progress { background: #fef3c7; color: #d97706; }
+.stat-icon.resolved { background: #dcfce7; color: #16a34a; }
+
+.stat-info h4 { margin: 0; color: var(--text-light); font-weight: 500; font-size: 0.9rem; }
+.stat-info p { font-size: 2.25rem; font-weight: 700; margin: 4px 0 0 0; color: var(--white-color); }
+
+/* (RE-STYLED) Domain/Issue Sections */
+.domain-section h2, .issues-section h2, .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white-color);
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.domain-cards {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 16px; 
+}
+/* Apply glass style to domain cards */
+.domain-card { 
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    padding: 24px;
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    text-align: center; 
+    cursor: pointer; 
+    color: var(--white-color);
+}
+.domain-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-color-alt);
+    border-color: var(--primary-color-alt);
+    color: var(--primary-color-alt);
+}
+.domain-card span {
+    font-size: 1.75rem; display: block; margin-bottom: 8px;
+}
+
+.issues-section, .domain-section, .content-section { 
+    margin-top: 40px; 
+}
+
+/* (RE-STYLED) Content Sections */
+.content-section {
+    background: var(--dark-color-alt); /* Solid dark card, not glass */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+}
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+/* Apply glass style to "How it works" steps */
+.how-it-works-step {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    padding: 24px;
+}
+.how-it-works-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-color-alt);
+    border-color: var(--primary-color-alt);
+}
+
+.step-icon {
+    font-size: 2rem; width: 60px; height: 60px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #e0e7ff; color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.how-it-works-step h3 {
+    font-size: 1.2rem; font-weight: 600;
+    margin-bottom: 0.5rem; color: var(--white-color);
+}
+.how-it-works-step p { color: var(--text-light); line-height: 1.6; }
+
+/* (RE-STYLED) FAQ Section */
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+    font-size: 1.1rem; font-weight: 600; cursor: pointer;
+    list-style: none; display: block; position: relative;
+    padding-right: 25px; color: var(--white-color);
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+    content: '+'; font-size: 1.5rem; position: absolute;
+    right: 5px; top: 50%; transform: translateY(-50%);
+    transition: transform 0.2s ease; color: var(--primary-color);
+}
+details[open] > summary.faq-question::after { content: '−'; }
+.faq-answer { padding-top: 1rem; color: var(--text-light); line-height: 1.7; }
+
+
+/* (RE-STYLED) Issues List */
+.issue-card { 
+    background: var(--dark-color-alt); 
+    padding: 20px; border-radius: 10px; 
+    box-shadow: none; border: 1px solid var(--border-color);
+    margin-bottom: 15px; border-left: 6px solid var(--primary-color); 
+    display: flex; justify-content: space-between;
+    align-items: center; cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.issue-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.issue-card h3 { margin: 0 0 10px 0; font-weight: 600; color: var(--white-color); }
+.issue-card p { margin: 5px 0; font-size: 0.9rem; color: var(--text-light); }
+.issue-card p strong { color: var(--white-color); }
+
+.status-badge { 
+    padding: 6px 12px; border-radius: 20px; font-weight: 600; 
+    font-size: 0.8rem; min-width: 110px; text-align: center;
+    flex-shrink: 0; margin-left: 16px; color: #fff;
+}
+.status-submitted { background-color: var(--primary-color); }
+.status-inprogress { background-color: var(--warning-color); }
+.status-resolved { background-color: var(--success-color); }
+
+
+/* (MODIFIED) Modal Styles - Kept LIGHT THEME for focus */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(4px); }
+.modal-content { 
+    background-color: #fefefe; /* LIGHT */
+    color: #333; /* DARK TEXT */
+    margin: 10% auto; padding: 30px; border-radius: 12px; 
+    width: 90%; max-width: 500px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: scaleUp 0.3s ease-out;
+}
+@keyframes scaleUp { from { opacity: 0; transform: scale(0.95) } to { opacity: 1; transform: scale(1) } }
+
+.close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
+.close-button:hover { color: #333; }
+
+#issue-form input, #issue-form textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd; box-sizing: border-box; }
+#issue-form button { 
+    width: 100%; padding: 12px; background: var(--primary-color); 
+    color: white; border: none; border-radius: 8px; cursor: pointer; 
+    font-size: 1rem; font-weight: 600; transition: background 0.2s;
+    font-family: "Raleway", sans-serif;
+}
+#issue-form button:hover { background: #333; }
+
+#issue-details-modal .modal-content {
+    margin: 5% auto; max-width: 600px;
+    max-height: 85vh; overflow-y: auto;
+}
+#issue-details-modal h4 {
+    margin-top: 20px; margin-bottom: 10px;
+    color: #333; border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+#issue-details-modal p { margin: 5px 0; line-height: 1.6; }
+
+
+/* =============== (NEW) ANIMATIONS ======= */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============== (MODIFIED) MEDIA QUERIES ======= */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  header {
+    padding: 0.5rem 1rem;
+  }
+  .navbar {
+    /* (NEW) Dark glass mobile menu */
+    background-color: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 60px; /* Height of header */
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    /* --- THIS IS THE FIX --- */
+    transition: transform 300ms; 
+  }
+  .show-navbar {
+    display: flex;
+    transform: scaleY(1);
+   
+  }
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    align-items: center;
+  }
+  .nav-item {
+    margin: 1rem 0;
+  }
+  .nav-link {
+    font-size: 1.5rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .bx-menu {
+    display: block !important;
+  }
+  .show-bx {
+    display: block !important;
+  }
+  .hide-bx {
+    display: none !important;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem; /* Smaller for mobile */
+  }
+}
+/* ===================== NEW ADDITIONS ===================== */
+
+/* 🔹 Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 1s ease;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color-alt);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
+.nav-links a {
+  color: var(--white-color);
+  font-weight: 500;
+  margin-left: 2rem;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color-alt);
+  text-shadow: 0 0 10px var(--primary-color-alt);
+}
+
+.logout-btn {
+  background: linear-gradient(90deg, #e74c3c, #f39c12);
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  transition: all 0.3s ease;
+}
+.logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #f39c12;
+}
+
+/* 🔹 Home Section */
+.home-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem;
+  color: var(--white-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-text h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-text p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+/* 🔹 Background Animation */
+.background-animation {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.3), transparent 70%);
+  animation: pulse 6s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* 🔹 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in { animation: fadeIn 1s ease forwards; }
+.slide-up { animation: fadeIn 1.2s ease forwards; }
+
+/* 🔹 Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(10, 10, 15, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  margin-top: 40px;
+}
+/* ===== Map Section Styles ===== */
+.map-section {
+  margin-top: 2rem;
+  background: rgb(86, 19, 91);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+#issue-map,
+#admin-map {
+  width: 100%;
+  height: 400px;
+  border-radius: 2px;
+  margin-top: 1rem;
+}
